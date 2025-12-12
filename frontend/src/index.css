@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+:root {
+  --global-font: 'Poppins, sans-serif';
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif,Poppins;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --bg-color: #ffffff;
+  --text-color: #2c2c2c;
+  --border-color: #eeeeee;
+  --accent-color: #007bff;
+  --accent-text: #ffffff;
+  --sidebar-bg: #f9f9f9;
+  --chat-bg: #f5f5f5;
+  --message-bg: #ffffff;
+  --message-me-bg: #4b8320;
+  --system-message-color: #888;
+  --toggle-botton-bg: #283861;
+
+  --background: oklch(0.98 0.002 264);
+  --foreground: oklch(0.2 0.01 264);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.01 264);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.01 264);
+  --primary: oklch(0.5 0.2 264);
+  --primary-divide-ten: rgb(229, 235, 248);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0.005 264);
+  --secondary-foreground: oklch(0.2 0.01 264);
+  --muted: oklch(0.96 0.005 264);
+  --muted-foreground: oklch(0.5 0.02 264);
+  --accent: oklch(0.96 0.005 264);
+  --accent-foreground: oklch(0.2 0.01 264);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.92 0.005 264);
+  --input: oklch(0.92 0.005 264);
+  --ring: oklch(0.5 0.2 264);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.2 0.01 264);
+  --sidebar-primary: oklch(0.5 0.2 264);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.96 0.005 264);
+  --sidebar-accent-foreground: oklch(0.2 0.01 264);
+  --sidebar-border: oklch(0.92 0.005 264);
+  --sidebar-ring: oklch(0.5 0.2 264);
+}
+
+/* 🌟 Feature 1: Dark Mode */
+[data-theme='dark'] {
+  --bg-color: #2c2c2c;
+  --text-color: #f1f1f1;
+  --border-color: #444444;
+  --accent-color: #60a5fa;
+  --accent-text: #2c2c2c;
+  --sidebar-bg: #333333;
+  --chat-bg: #080b12;
+  --message-bg: #444444;
+  --message-me-bg: #056162;
+  --system-message-color: #aaa;
+  --toggle-botton-bg: #ffffff;
+
+  --background: oklch(0.15 0.015 264);
+  --foreground: oklch(0.95 0.005 264);
+  --card: oklch(0.18 0.015 264);
+  --card-divide-fifty: #0b0e15;
+  --card-foreground: oklch(0.95 0.005 264);
+  --popover: oklch(0.18 0.015 264);
+  --popover-foreground: oklch(0.95 0.005 264);
+  --primary: #3266e4;
+  --primary-divide-ten: #0f172a;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.25 0.015 264);
+  --secondary-foreground: oklch(0.95 0.005 264);
+  --muted: oklch(0.25 0.015 264);
+  --muted-foreground: oklch(0.65 0.01 264);
+  --accent: oklch(0.25 0.015 264);
+  --accent-foreground: #edeef2;
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.25 0.015 264);
+  --input: oklch(0.25 0.015 264);
+  --ring: oklch(0.55 0.2 264);
+  --chart-1: oklch(0.55 0.2 264);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.12 0.015 264);
+  --sidebar-foreground: oklch(0.95 0.005 264);
+  --sidebar-primary: oklch(0.55 0.2 264);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.25 0.015 264);
+  --sidebar-accent-foreground: oklch(0.95 0.005 264);
+  --sidebar-border: oklch(0.22 0.015 264);
+  --sidebar-ring: oklch(0.55 0.2 264);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* button {
+  background-color: var(--accent-color);
+  color: var(--accent-text);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+} */
+
+input {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 4px;
+}
+
+.animated-gradient {
+    background: linear-gradient(
+      -45deg,
+      oklch(0.5 0.2 264),
+      oklch(0.55 0.18 280),
+      oklch(0.5 0.2 264),
+      oklch(0.55 0.18 250)
+    );
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
